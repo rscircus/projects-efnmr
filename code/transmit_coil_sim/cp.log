@@ -1,0 +1,10 @@
+INFO: Platform: win32
+INFO: Version Info: v0.3.0
+DEBUG: Log Path: cp.log
+DEBUG: command: ['python', 'E:\\projects\\EFNMR\\code\\python\\transmit_coil_sim\\transmit_coil_params.py']
+DEBUG: file: None
+DEBUG: pause: True
+DEBUG: repl: python
+DEBUG: args: ['E:\\projects\\EFNMR\\code\\python\\transmit_coil_sim\\transmit_coil_params.py']
+INFO: return code: 0 (0x0)
+INFO: elapsed time: 17239.114470
