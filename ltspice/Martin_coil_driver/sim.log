@@ -1,0 +1,21 @@
+Circuit: * E:\projects\EFNMR\ltspice\Martin_coil_driver\sim.asc
+
+.OP point found by inspection.
+
+Date: Sat Nov 02 23:03:15 2024
+Total elapsed time: 1.537 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 772685
+traniter = 772685
+tranpoints = 385140
+accept = 275376
+rejected = 109764
+matrix size = 22
+fillins = 0
+solver = Normal
+Matrix Compiler1: 604 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 1.35 KB object code size  0.1/0.1/[0.1]
+
