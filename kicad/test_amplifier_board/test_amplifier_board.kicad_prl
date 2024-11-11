@@ -65,7 +65,7 @@
       40
     ],
     "visible_layers": "ffcffff_ffffffff",
-    "zone_display_mode": 0
+    "zone_display_mode": 1
   },
   "git": {
     "repo_password": "",
@@ -74,7 +74,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "polarizing_coil_driver.kicad_prl",
+    "filename": "test_amplifier_board.kicad_prl",
     "version": 3
   },
   "project": {
