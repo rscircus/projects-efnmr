@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy
+import pickle
 
 def get_sine_amp(data, plot=False, fixed_freq=None):
     spec = abs(np.fft.fft(data))**2
@@ -72,6 +73,18 @@ for idx in range(len(data_fine_all["data"])):
     gain = v2/v1/gain_in_out
     gains_fine.append(gain)
 gains_fine = np.array(gains_fine)
+
+
+interp_data = np.array(sorted(
+    list(zip(data_all["frequencies"], gains)) +
+    list(zip(data_fine_all["frequencies"], gains_fine)),
+    key=lambda p:p[0]))
+with open("gain_interpf_log10log10.pickle", "wb") as f:
+    pickle.dump(scipy.interpolate.interp1d(
+        np.log10(abs(interp_data[:, 0])),
+        np.log10(abs(interp_data[:, 1])),
+        kind="linear"
+        ), f)
 
 plt.figure(figsize=(8, 4))
 
