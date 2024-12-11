@@ -19,11 +19,11 @@ The gain is calculated by fitting the amplitude, phase and frequency of the inpu
 - Record 100 waveforms with the red pitaya's input channel 1 connected to its output channel 1 set to a 1kHz 2Vpp sine wave.
 
 The red pitaya noise floor is rather high and only allows measurement of the amplifier noise close to peak gain.
-
+![Measurement plots](fig_noise_measurement_rp_plots.png "Measurement plots")
 
 # 11.12.2024
 
 ### Measurement of noise power spectral density
 
-Instead of the red pitaya, I used the R&S RTB2004 oscilloscope. The resulting output noise PSD as well as the input-referred noise (calculate using the gain curve measured previously) are shown in the following plot:
+Instead of the red pitaya, I used the R&S RTB2004 oscilloscope. The resulting output noise PSD as well as the input-referred noise (calculated using the gain curve measured previously) are shown in the following plot:
 ![Measurement plots](fig_noise_measurement_plots.png "Measurement plots")
