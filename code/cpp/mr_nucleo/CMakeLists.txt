@@ -35,33 +35,39 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(mr_nucleo mr_nucleo.cpp )
+add_executable(mr_nucleo 
+    main.cpp
+    src/hardware.cpp
+    src/data_handler.cpp
+    src/pulse_sequences.cpp
+)
 
 pico_set_program_name(mr_nucleo "mr_nucleo")
 pico_set_program_version(mr_nucleo "0.1")
 
-# Generate PIO header
-pico_generate_pio_header(mr_nucleo ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
-
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(mr_nucleo 0)
-pico_enable_stdio_usb(mr_nucleo 0)
-
-# Add the standard library to the build
-target_link_libraries(mr_nucleo
-        pico_stdlib)
+pico_enable_stdio_usb(mr_nucleo 1)
 
 # Add the standard include files to the build
 target_include_directories(mr_nucleo PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/include
         ${CMAKE_CURRENT_LIST_DIR}
+)
+
+target_include_directories(mr_nucleo PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 # Add any user requested libraries
 target_link_libraries(mr_nucleo 
-        hardware_pio
+        hardware_gpio
+        hardware_adc
         hardware_timer
         hardware_clocks
+        pico_stdlib # stdlib
         )
 
+# pico needs a .uf2 file
 pico_add_extra_outputs(mr_nucleo)
 
